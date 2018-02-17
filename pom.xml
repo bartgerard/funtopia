@@ -5,8 +5,11 @@
 
 	<groupId>be.gerard</groupId>
 	<artifactId>funtopia</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>pathfinder</module>
+    </modules>
+    <packaging>pom</packaging>
 
 	<name>funtopia</name>
 	<description>Funtopia</description>
