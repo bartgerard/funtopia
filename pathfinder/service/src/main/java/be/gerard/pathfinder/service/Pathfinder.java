@@ -41,24 +41,6 @@ public class Pathfinder {
             return Optional.empty();
         }
 
-        final Optional<List<Node>> first = toMap.entrySet()
-                                                .stream()
-                                                .filter(entry -> entry.getValue()
-                                                                      .contains(end)
-                                                )
-                                                .map(Map.Entry::getKey)
-                                                .map(from -> {
-                                                    final List<Node> result = new ArrayList<>();
-                                                    result.add(from);
-                                                    result.add(end);
-                                                    return result;
-                                                })
-                                                .findFirst();
-
-        if (first.isPresent()) {
-            return first;
-        }
-
         final Set<Node> tos = toMap.values()
                                    .stream()
                                    .flatMap(Set::stream)
@@ -67,20 +49,19 @@ public class Pathfinder {
         final Set<Node> allVisited = new HashSet<>(visited);
         allVisited.addAll(tos);
 
-        final Optional<List<Node>> shortestPath = findShortestPath(links, end, tos, allVisited);
-
-        return shortestPath.map(path -> toMap.entrySet()
-                                             .stream()
-                                             .filter(entry -> entry.getValue()
-                                                                   .contains(path.get(0))
-                                             )
-                                             .map(Map.Entry::getKey)
-                                             .findFirst()
-                                             .map(previous -> {
-                                                 path.add(0, previous);
-                                                 return path;
-                                             })
-                                             .orElseThrow(IllegalStateException::new)
+        return findShortestPath(links, end, tos, allVisited).map(
+                path -> toMap.entrySet()
+                             .stream()
+                             .filter(entry -> entry.getValue()
+                                                   .contains(path.get(0))
+                             )
+                             .map(Map.Entry::getKey)
+                             .findFirst()
+                             .map(previous -> {
+                                 path.add(0, previous);
+                                 return path;
+                             })
+                             .orElseThrow(IllegalStateException::new)
         );
     }
 

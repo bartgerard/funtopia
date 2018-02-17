@@ -33,13 +33,16 @@ public class PathfinderTest {
     private static final Node Y = Node.withTags(List.of(TestTag.Y));
     private static final Node Z = Node.withTags(List.of(TestTag.Z));
 
-    final Set<Link> BASE_LINKS = Set.of(
+    //  A - B - C1 - D   E - F - G - X - Y - Z
+    //        \    /
+    //          C2
+
+    private final Set<Link> BASE_LINKS = Set.of(
             new Link(A, B),
             new Link(B, C1),
             new Link(B, C2),
             new Link(C1, D),
             new Link(C2, D),
-            new Link(D, E),
             new Link(E, F),
             new Link(F, G),
             new Link(G, X),
@@ -65,7 +68,15 @@ public class PathfinderTest {
     public void findShortestPathAdvancedBasicTest() {
         final Set<Link> links = new HashSet<>(BASE_LINKS);
         links.add(new Link(A, X));
+        links.add(new Link(D, E));
         links.add(new Link(C1, Z));
+
+        //              - - - - - - - - - - - -
+        //             /                       \
+        //  A - B - C1 - D - E - F - G - X - Y - Z
+        //  |     \    /                 |
+        //  |       C2                   |
+        //  - - - - - - - - - - - - - - -
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, Z, Collections.singleton(B), Collections.emptySet()))
                   .isEqualTo(Optional.of(Arrays.asList(B, C1, Z)));
@@ -78,6 +89,22 @@ public class PathfinderTest {
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, Z, Set.of(Y, G), Collections.emptySet()))
                   .isEqualTo(Optional.of(Arrays.asList(Y, Z)));
+    }
+
+    @Test
+    public void findDirectedShortestPathAdvancedBasicTest() {
+        final Set<Link> links = new HashSet<>(BASE_LINKS);
+        links.add(new Link(Z, C1, false));
+        links.add(new Link(D, E, false));
+
+        //              < < < < < < < < < < < <
+        //             /                       \
+        //  A - B - C1 - D > E - F - G - X - Y - Z
+        //        \    /
+        //          C2
+
+        Assertions.assertThat(Pathfinder.findShortestPath(links, D, Collections.singleton(E), Collections.emptySet()))
+                  .isEqualTo(Optional.of(Arrays.asList(E, F, G, X, Y, Z, C1, D)));
     }
 
 }
