@@ -53,4 +53,11 @@ public class Node {
         return Objects.hash(tags);
     }
 
+    @Override
+    public String toString() {
+        return "Node{" +
+                "tags=" + tags +
+                '}';
+    }
+
 }

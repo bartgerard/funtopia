@@ -12,13 +12,23 @@ public class Link {
 
     private final Node from;
     private final Node to;
+    private final boolean bidirectional;
+
+    public Link(
+            final Node from,
+            final Node to
+    ) {
+        this(from, to, true);
+    }
 
     public Link(
             final Node from,
             final Node to,
+            final boolean bidirectional
     ) {
         this.from = from;
         this.to = to;
+        this.bidirectional = bidirectional;
     }
 
     public Node getFrom() {
@@ -27,6 +37,10 @@ public class Link {
 
     public Node getTo() {
         return to;
+    }
+
+    public boolean isBidirectional() {
+        return bidirectional;
     }
 
     @Override
