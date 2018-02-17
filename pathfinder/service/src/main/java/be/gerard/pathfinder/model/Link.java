@@ -15,7 +15,7 @@ public class Link {
 
     public Link(
             final Node from,
-            final Node to
+            final Node to,
     ) {
         this.from = from;
         this.to = to;

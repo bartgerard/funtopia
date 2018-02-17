@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/funtopia.iml" filepath="$PROJECT_DIR$/funtopia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pathfinder/pathfinder.iml" filepath="$PROJECT_DIR$/pathfinder/pathfinder.iml" group="pathfinder and modules" />
+      <module fileurl="file://$PROJECT_DIR$/pathfinder-service.iml" filepath="$PROJECT_DIR$/pathfinder-service.iml" group="pathfinder and modules" />
+    </modules>
+  </component>
+</project>
