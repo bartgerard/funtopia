@@ -5,6 +5,7 @@ import be.gerard.pathfinder.model.Node;
 import be.gerard.pathfinder.model.Predicates;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -30,9 +31,7 @@ public class Pathfinder {
             final Set<Node> visited
     ) {
         if (froms.contains(end)) {
-            final List<Node> result = new ArrayList<>();
-            result.add(end);
-            return Optional.of(result);
+            return Optional.of(Collections.singletonList(end));
         }
 
         final Map<Node, Set<Node>> toMap = findToMap(links, froms, visited);
@@ -58,8 +57,9 @@ public class Pathfinder {
                              .map(Map.Entry::getKey)
                              .findFirst()
                              .map(previous -> {
-                                 path.add(0, previous);
-                                 return path;
+                                 final ArrayList<Node> result = new ArrayList<>(path);
+                                 result.add(0, previous);
+                                 return Collections.unmodifiableList(result);
                              })
                              .orElseThrow(IllegalStateException::new)
         );
