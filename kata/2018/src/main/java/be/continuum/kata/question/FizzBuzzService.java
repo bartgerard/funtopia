@@ -1,6 +1,7 @@
 package be.continuum.kata.question;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * FizzBuzzService
@@ -10,6 +11,11 @@ import java.util.List;
  */
 public interface FizzBuzzService {
 
+    Map<Integer, String> DIVIDER_MAP = Map.ofEntries(
+            Map.entry(3, "Fizz"),
+            Map.entry(5, "Buzz")
+    );
+
     /**
      * FizzBuzz-transformation for a selected set of consecutive numbers.
      *
@@ -18,7 +24,10 @@ public interface FizzBuzzService {
      * @return A List containing the FizzBuzz-transformation from the selected numbers in order of appearance.
      * @constraint start < n
      */
-    List<String> transform(int start, int n);
+    List<String> transform(
+            int start,
+            int n
+    );
 
     /**
      * FizzBuzz-transformation for a single number.

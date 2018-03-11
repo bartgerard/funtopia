@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/funtopia.iml" filepath="$PROJECT_DIR$/funtopia.iml" />
       <module fileurl="file://$PROJECT_DIR$/kata/kata.iml" filepath="$PROJECT_DIR$/kata/kata.iml" group="kata and modules" />
-      <module fileurl="file://$PROJECT_DIR$/kata/2018/kata-2018.iml" filepath="$PROJECT_DIR$/kata/2018/kata-2018.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kata/2018/kata-2018.iml" filepath="$PROJECT_DIR$/kata/2018/kata-2018.iml" group="kata and modules" />
       <module fileurl="file://$PROJECT_DIR$/pathfinder/pathfinder.iml" filepath="$PROJECT_DIR$/pathfinder/pathfinder.iml" group="pathfinder and modules" />
       <module fileurl="file://$PROJECT_DIR$/pathfinder-service.iml" filepath="$PROJECT_DIR$/pathfinder-service.iml" group="pathfinder and modules" />
     </modules>

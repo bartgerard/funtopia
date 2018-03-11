@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class FizzBuzzServiceSolutionTest {
 
-    private final FizzBuzzService service = new FizzBuzzServiceImpl();
+    private final FizzBuzzService service = new FizzBuzzServiceImpl(FizzBuzzService.DIVIDER_MAP);
 
     @Test
     public void testFizzBuzz() {
