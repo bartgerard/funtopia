@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="decryptor" />
         <module name="kata-2018" />
         <module name="pathfinder-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="2018" target="9" />
+      <module name="decryptor" target="9" />
       <module name="funtopia" target="9" />
       <module name="kata" target="9" />
       <module name="kata-2018" target="9" />
