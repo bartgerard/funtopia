@@ -41,27 +41,27 @@ public class Pathfinder {
         }
 
         final Set<Node> tos = toMap.values()
-                                   .stream()
-                                   .flatMap(Set::stream)
-                                   .collect(Collectors.toSet());
+                .stream()
+                .flatMap(Set::stream)
+                .collect(Collectors.toSet());
 
         final Set<Node> allVisited = new HashSet<>(visited);
         allVisited.addAll(tos);
 
         return findShortestPath(links, end, tos, allVisited).map(
                 path -> toMap.entrySet()
-                             .stream()
-                             .filter(entry -> entry.getValue()
-                                                   .contains(path.get(0))
-                             )
-                             .map(Map.Entry::getKey)
-                             .findFirst()
-                             .map(previous -> {
-                                 final ArrayList<Node> result = new ArrayList<>(path);
-                                 result.add(0, previous);
-                                 return Collections.unmodifiableList(result);
-                             })
-                             .orElseThrow(IllegalStateException::new)
+                        .stream()
+                        .filter(entry -> entry.getValue()
+                                .contains(path.get(0))
+                        )
+                        .map(Map.Entry::getKey)
+                        .findFirst()
+                        .map(previous -> {
+                            final ArrayList<Node> result = new ArrayList<>(path);
+                            result.add(0, previous);
+                            return Collections.unmodifiableList(result);
+                        })
+                        .orElseThrow(IllegalStateException::new)
         );
     }
 
@@ -71,20 +71,20 @@ public class Pathfinder {
             final Set<Node> visited
     ) {
         return froms.stream()
-                    .collect(Collectors.toMap(
-                            Function.identity(),
-                            from -> Stream.concat(
-                                    links.stream()
-                                         .filter(link -> Objects.equals(from, link.getFrom()))
-                                         .map(Link::getTo),
-                                    links.stream()
-                                         .filter(Link::isBidirectional)
-                                         .filter(link -> Objects.equals(from, link.getTo()))
-                                         .map(Link::getFrom)
-                            )
-                                          .filter(Predicates.not(visited::contains))
-                                          .collect(Collectors.toSet())
-                    ));
+                .collect(Collectors.toMap(
+                        Function.identity(),
+                        from -> Stream.concat(
+                                links.stream()
+                                        .filter(link -> Objects.equals(from, link.getFrom()))
+                                        .map(Link::getTo),
+                                links.stream()
+                                        .filter(Link::isBidirectional)
+                                        .filter(link -> Objects.equals(from, link.getTo()))
+                                        .map(Link::getFrom)
+                        )
+                                .filter(Predicates.not(visited::contains))
+                                .collect(Collectors.toSet())
+                ));
     }
 
 }

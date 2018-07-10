@@ -34,6 +34,14 @@ public interface Filter<T> {
         return new Values<>(values);
     }
 
+    enum Type {
+        NONE,
+        WILD,
+        REQUIRED,
+        VALUE,
+        EXCLUDE
+    }
+
     class None<T> implements Filter<T> {
 
     }
@@ -64,14 +72,6 @@ public interface Filter<T> {
             this.values = values;
         }
 
-    }
-
-    enum Type {
-        NONE,
-        WILD,
-        REQUIRED,
-        VALUE,
-        EXCLUDE
     }
 
 }

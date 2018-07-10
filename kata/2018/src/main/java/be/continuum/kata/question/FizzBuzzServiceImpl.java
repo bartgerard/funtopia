@@ -27,8 +27,8 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
             final int n
     ) {
         return IntStream.range(start, n + 1)
-                        .mapToObj(this::transform)
-                        .collect(Collectors.toList());
+                .mapToObj(this::transform)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -36,20 +36,20 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
             final int i
     ) {
         final List<Integer> dividers = dividerMap.keySet()
-                                                 .stream()
-                                                 .collect(Collectors.filtering(
-                                                         key -> i % key == 0,
-                                                         Collectors.toList()
-                                                 ));
+                .stream()
+                .collect(Collectors.filtering(
+                        key -> i % key == 0,
+                        Collectors.toList()
+                ));
 
         if (dividers.isEmpty()) {
             return Objects.toString(i);
         }
 
         return dividers.stream()
-                       .sorted(Comparator.naturalOrder())
-                       .map(dividerMap::get)
-                       .collect(Collectors.joining());
+                .sorted(Comparator.naturalOrder())
+                .map(dividerMap::get)
+                .collect(Collectors.joining());
     }
 
 }

@@ -8,8 +8,8 @@ package be.gerard.pathfinder.model;
  */
 public interface Tag {
 
-    interface Type {}
-
     Type getType();
+
+    interface Type {}
 
 }

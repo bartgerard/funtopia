@@ -20,20 +20,19 @@ public class Node {
         this.tags = tags;
     }
 
-    public Map<Tag.Type, Tag> getTags() {
-        return tags;
-    }
-
     public static Node withTags(
             final Collection<Tag> tags
     ) {
-        return new Node(
-                tags.stream()
-                    .collect(Collectors.toMap(
-                            Tag::getType,
-                            Function.identity()
-                    ))
+        return new Node(tags.stream()
+                .collect(Collectors.toMap(
+                        Tag::getType,
+                        Function.identity()
+                ))
         );
+    }
+
+    public Map<Tag.Type, Tag> getTags() {
+        return tags;
     }
 
     @Override

@@ -21,10 +21,10 @@ public class FizzBuzzServiceTest {
     @Test
     public void testFizzBuzz() {
         service.transform(start, n)
-               .forEach(System.out::println);
+                .forEach(System.out::println);
 
         Assertions.assertThat(service.transform(start, n))
-                  .containsExactlyElementsOf(solution.transform(start, n));
+                .containsExactlyElementsOf(solution.transform(start, n));
     }
 
 }

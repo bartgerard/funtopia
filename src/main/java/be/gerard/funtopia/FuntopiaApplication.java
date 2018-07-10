@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FuntopiaApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FuntopiaApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FuntopiaApplication.class, args);
+    }
 }
