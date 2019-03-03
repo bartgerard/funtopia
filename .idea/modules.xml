@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/kata/bowling/bowling.iml" filepath="$PROJECT_DIR$/kata/bowling/bowling.iml" group="kata and modules" />
       <module fileurl="file://$PROJECT_DIR$/kata/decryptor/decryptor.iml" filepath="$PROJECT_DIR$/kata/decryptor/decryptor.iml" group="kata and modules" />
       <module fileurl="file://$PROJECT_DIR$/funtopia.iml" filepath="$PROJECT_DIR$/funtopia.iml" />
       <module fileurl="file://$PROJECT_DIR$/kata/kata.iml" filepath="$PROJECT_DIR$/kata/kata.iml" group="kata and modules" />

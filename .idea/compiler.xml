@@ -6,19 +6,29 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="decryptor" />
         <module name="kata-2018" />
         <module name="pathfinder-service" />
+        <module name="bowling" />
+        <module name="decryptor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="2018" target="9" />
-      <module name="decryptor" target="9" />
-      <module name="funtopia" target="9" />
-      <module name="kata" target="9" />
+      <module name="bowling" target="11" />
+      <module name="decryptor" target="11" />
+      <module name="funtopia" target="11" />
+      <module name="kata" target="11" />
       <module name="kata-2018" target="9" />
-      <module name="pathfinder" target="9" />
-      <module name="pathfinder-service" target="9" />
+      <module name="pathfinder" target="11" />
+      <module name="pathfinder-service" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bowling" options="-parameters" />
+      <module name="decryptor" options="-parameters" />
+      <module name="kata-2018" options="-parameters" />
+      <module name="pathfinder-service" options="-parameters" />
+    </option>
   </component>
 </project>
