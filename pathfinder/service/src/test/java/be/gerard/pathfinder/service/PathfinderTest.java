@@ -4,9 +4,8 @@ import be.gerard.pathfinder.model.Link;
 import be.gerard.pathfinder.model.Node;
 import be.gerard.pathfinder.model.TestTag;
 import org.assertj.core.api.Assertions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -58,7 +57,7 @@ public class PathfinderTest {
         );
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, Z, Collections.singleton(X), Collections.emptySet()))
-                .isEqualTo(Optional.of(Arrays.asList(X, Y, Z)));
+                .isEqualTo(Optional.of(List.of(X, Y, Z)));
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, Z, Collections.singleton(Z), Collections.emptySet()))
                 .isEqualTo(Optional.of(Collections.singletonList(Z)));
@@ -79,16 +78,16 @@ public class PathfinderTest {
         //  - - - - - - - - - - - - - - -
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, Z, Collections.singleton(B), Collections.emptySet()))
-                .isEqualTo(Optional.of(Arrays.asList(B, C1, Z)));
+                .isEqualTo(Optional.of(List.of(B, C1, Z)));
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, Z, Collections.singleton(A), Collections.emptySet()))
-                .isEqualTo(Optional.of(Arrays.asList(A, B, C1, Z)));
+                .isEqualTo(Optional.of(List.of(A, B, C1, Z)));
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, Z, Set.of(Y, G), Collections.emptySet()))
-                .isEqualTo(Optional.of(Arrays.asList(Y, Z)));
+                .isEqualTo(Optional.of(List.of(Y, Z)));
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, Z, Set.of(Y, G), Collections.emptySet()))
-                .isEqualTo(Optional.of(Arrays.asList(Y, Z)));
+                .isEqualTo(Optional.of(List.of(Y, Z)));
     }
 
     @Test
@@ -104,7 +103,7 @@ public class PathfinderTest {
         //          C2
 
         Assertions.assertThat(Pathfinder.findShortestPath(links, D, Collections.singleton(E), Collections.emptySet()))
-                .isEqualTo(Optional.of(Arrays.asList(E, F, G, X, Y, Z, C1, D)));
+                .isEqualTo(Optional.of(List.of(E, F, G, X, Y, Z, C1, D)));
     }
 
 }

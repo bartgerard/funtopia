@@ -1,6 +1,6 @@
 package be.continuum.decryptor;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.data.util.Pair;
 
 import java.util.List;
