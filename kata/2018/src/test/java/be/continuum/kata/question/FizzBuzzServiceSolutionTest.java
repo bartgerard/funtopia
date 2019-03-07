@@ -1,7 +1,7 @@
 package be.continuum.kata.question;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * FizzBuzzServiceSolutionTest
@@ -9,12 +9,12 @@ import org.junit.Test;
  * @author bgerard
  * @version 1.0
  */
-public class FizzBuzzServiceSolutionTest {
+class FizzBuzzServiceSolutionTest {
 
     private final FizzBuzzService service = new FizzBuzzServiceImpl(FizzBuzzService.DIVIDER_MAP);
 
     @Test
-    public void testFizzBuzz() {
+    void testFizzBuzz() {
         service.transform(1, 200)
                 .forEach(System.out::println);
 

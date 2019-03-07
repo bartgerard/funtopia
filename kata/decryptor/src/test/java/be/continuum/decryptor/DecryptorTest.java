@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * @author bartgerard
  * @version v0.0.1
  */
-public class DecryptorTest {
+class DecryptorTest {
 
     private static final String SHERLOCK = "AOEPCTQIHJGFKBRYLVDZNXUWMS";
     private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -38,7 +38,7 @@ public class DecryptorTest {
     );
 
     @Test
-    public void test() {
+    void test() {
         final Decryptor decryptor = new Decryptor(SHERLOCK, ALPHABET);
 
         final String sentence = "NVWMVO. KJUYBA. WU EAJVN. VR MAWGNBXO OBB VXLWRR JE GBELNBLBX.";

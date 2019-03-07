@@ -21,4 +21,22 @@ public class Game {
 
     private final List<Frame> frames;
 
+    @RequiredArgsConstructor
+    public static class Frame {
+
+        /*
+         * first(pins) == 10 --> 'X'
+         * sum(pins) == 10 --> '/'
+         * sum(pins) == 0 --> '-'
+         * foul --> 'F'
+         * else --> hits
+         */
+
+        // two choices, either Frame knows about next frames
+        // or Game manages scoring
+
+        private final List<Integer> pins;
+
+    }
+
 }
