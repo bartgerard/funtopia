@@ -12,4 +12,8 @@ public interface Language {
             String sentence
     );
 
+    String translate(
+            String sentence
+    );
+
 }
