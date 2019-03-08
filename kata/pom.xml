@@ -11,11 +11,12 @@
 
     <artifactId>kata</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>2018</module>
         <module>decryptor</module>
         <module>bowling</module>
+        <module>varia</module>
     </modules>
-
 
 </project>

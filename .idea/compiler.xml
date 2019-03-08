@@ -7,10 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="kata-varia" />
+        <module name="kata-2018" />
+        <module name="pathfinder-service" />
         <module name="bowling" />
         <module name="decryptor" />
-        <module name="pathfinder-service" />
-        <module name="kata-2018" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,7 +20,8 @@
       <module name="decryptor" target="11" />
       <module name="funtopia" target="11" />
       <module name="kata" target="11" />
-      <module name="kata-2018" target="9" />
+      <module name="kata-2018" target="11" />
+      <module name="kata-varia" target="11" />
       <module name="pathfinder" target="11" />
       <module name="pathfinder-service" target="11" />
     </bytecodeTargetLevel>
@@ -29,6 +31,7 @@
       <module name="bowling" options="-parameters" />
       <module name="decryptor" options="-parameters" />
       <module name="kata-2018" options="-parameters" />
+      <module name="kata-varia" options="-parameters" />
       <module name="pathfinder-service" options="-parameters" />
     </option>
   </component>
