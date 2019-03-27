@@ -2,6 +2,7 @@ package be.gerard.kata.bowling;
 
 import lombok.NoArgsConstructor;
 import lombok.Value;
+import org.springframework.util.Assert;
 
 import java.util.List;
 import java.util.stream.IntStream;
@@ -18,6 +19,11 @@ public class TenPinBowlingGame {
     public static int scoreGame(
             final List<Frame> frames
     ) {
+        Assert.isTrue(
+                frames.size() >= 10,
+                () -> "frames.size is invalid [" + frames.size() + " < 10]"
+        );
+
         return IntStream.range(0, 10)
                 .map(i -> scoreFrame(frames, i))
                 .sum();

@@ -10,6 +10,8 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 /**
  * WhenBowling
  * http://codingdojo.org/kata/Bowling/
@@ -64,6 +66,28 @@ class WhenBowling {
 
             // THEN
             Assertions.assertThat(score).isEqualTo(expectedScore);
+        }
+
+    }
+
+    @Nested
+    class AndPlayingAnInvalidGame {
+
+        final String anInvalidGame = "X X";
+
+        @Test
+        void i_will_be_punished() {
+            // GIVEN
+            final List<TenPinBowlingGame.Frame> frames = ScoreParser.parseFrames(anInvalidGame);
+
+            // WHEN
+            final IllegalArgumentException exception = assertThrows(
+                    IllegalArgumentException.class,
+                    () -> TenPinBowlingGame.scoreGame(frames)
+            );
+
+            // THEN
+            Assertions.assertThat(exception.getMessage()).isEqualTo("frames.size is invalid [2 < 10]");
         }
 
     }
