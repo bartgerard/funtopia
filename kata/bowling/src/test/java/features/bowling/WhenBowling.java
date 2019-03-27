@@ -44,13 +44,13 @@ class WhenBowling {
 
         @ParameterizedTest(name = "A score card of {0} should score {1}")
         @CsvSource({
-                "X X X X X X X X X X X X, 300",
-                "9- 9- 9- 9- 9- 9- 9- 9- 9- 9-, 90",
+                "X X X X X X X X X X X X,         300",
                 "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5, 150",
                 "1/ 2/ 3/ 4/ 5/ 1/ 2/ 3/ 4/ 5/ 1, 130",
-                "-- -- -- -- -- -- -- -- -- --, 0",
-                "11 11 11 11 11 11 11 11 11 11, 20",
-                "FF FF FF FF FF FF FF FF FF FF, 0"
+                "9- 9- 9- 9- 9- 9- 9- 9- 9- 9-,    90",
+                "11 11 11 11 11 11 11 11 11 11,    20",
+                "-- -- -- -- -- -- -- -- -- --,     0",
+                "FF FF FF FF FF FF FF FF FF FF,     0"
         })
         void i_should_score(
                 final String scoreCard,

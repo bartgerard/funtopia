@@ -33,18 +33,21 @@ public final class ScoreParser {
     ) {
         final int[] deliveries = frame.chars()
                 .filter(delivery -> '/' != delivery)
-                .map(delivery -> {
-                    if ('X' == delivery) {
-                        return 10;
-                    } else if ('-' == delivery) {
-                        return 0;
-                    } else if ('F' == delivery) {
-                        return -1;
-                    } else {
-                        return Character.getNumericValue(delivery);
-                    }
-                })
+                .map(ScoreParser::toPins)
                 .toArray();
+
+        /*
+        return IntStream.concat(
+                IntStream.of(deliveries),
+                frame.contains("/")
+                        ? IntStream.of(10 - frame.chars()
+                        .takeWhile(delivery -> '/' != delivery)
+                        .map(ScoreParser::toPins)
+                        .sum())
+                        : IntStream.empty()
+        )
+                .toArray();
+        */
 
         return IntStream.concat(
                 IntStream.of(deliveries),
@@ -53,6 +56,20 @@ public final class ScoreParser {
                         : IntStream.empty()
         )
                 .toArray();
+    }
+
+    private static int toPins(
+            final int delivery
+    ) {
+        if ('X' == delivery) {
+            return 10;
+        } else if ('-' == delivery) {
+            return 0;
+        } else if ('F' == delivery) {
+            return -1;
+        } else {
+            return Character.getNumericValue(delivery);
+        }
     }
 
 }
