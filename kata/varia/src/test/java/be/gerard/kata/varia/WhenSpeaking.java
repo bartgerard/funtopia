@@ -41,7 +41,7 @@ class WhenSpeaking {
         }
 
         @DisplayName("the spoken sentence should be transformed back to the original sentence")
-        @ParameterizedTest(name = "For example {0} should be spoken as {1}")
+        @ParameterizedTest(name = "For example {0} should be spoken and then transformed back to {0}")
         @ValueSource(strings = {
                 "bart",
                 "how are you doing"
@@ -87,7 +87,7 @@ class WhenSpeaking {
         }
 
         @DisplayName("the spoken sentence should be transformed back to the original sentence")
-        @ParameterizedTest(name = "For example {0} should be spoken as {1}")
+        @ParameterizedTest(name = "For example {0} be spoken and then transformed back to {0}")
         @ValueSource(strings = {
                 "bart",
                 "how are you doing"

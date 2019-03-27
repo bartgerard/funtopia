@@ -16,14 +16,14 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="2018" target="9" />
-      <module name="bowling" target="11" />
-      <module name="decryptor" target="11" />
-      <module name="funtopia" target="11" />
-      <module name="kata" target="11" />
-      <module name="kata-2018" target="11" />
-      <module name="kata-varia" target="11" />
-      <module name="pathfinder" target="11" />
-      <module name="pathfinder-service" target="11" />
+      <module name="bowling" target="12" />
+      <module name="decryptor" target="12" />
+      <module name="funtopia" target="12" />
+      <module name="kata" target="12" />
+      <module name="kata-2018" target="12" />
+      <module name="kata-varia" target="12" />
+      <module name="pathfinder" target="12" />
+      <module name="pathfinder-service" target="12" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

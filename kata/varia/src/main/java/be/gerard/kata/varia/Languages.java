@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public enum Languages implements Language {
     P_LANGUAGE {
-
         @Override
         public String speak(
                 final String sentence
@@ -32,7 +31,6 @@ public enum Languages implements Language {
                     "$1"
             );
         }
-
     },
     P2_LANGUAGE {
         @Override
@@ -54,6 +52,5 @@ public enum Languages implements Language {
                     "$1"
             );
         }
-
     }
 }
