@@ -49,7 +49,8 @@ class WhenBowling {
                 "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5, 150",
                 "1/ 2/ 3/ 4/ 5/ 1/ 2/ 3/ 4/ 5/ 1, 130",
                 "-- -- -- -- -- -- -- -- -- --, 0",
-                "11 11 11 11 11 11 11 11 11 11, 20"
+                "11 11 11 11 11 11 11 11 11 11, 20",
+                "FF FF FF FF FF FF FF FF FF FF, 0"
         })
         void i_should_score(
                 final String scoreCard,
