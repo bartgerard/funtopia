@@ -95,7 +95,7 @@ public class OcrParser {
         final int lengthIgnoringNewLines = input.length() - 2;
         final int nbSymbols = lengthIgnoringNewLines / 9; // 3 lines x 3 symbols
         Assert.isTrue(lengthIgnoringNewLines % 9 == 0, () -> "input has invalid length [" + lengthIgnoringNewLines + "]");
-        
+
         // input.substring(0 + nbSymbols * 0 + i, 0 + nbSymbols * 0 + i + 3)
         //         + input.substring(1 + nbSymbols * 3 + i, 1 + nbSymbols * 3 + i + 3)
         //         + input.substring(2 + nbSymbols * 6 + i, 2 + nbSymbols * 6 + i + 3)
@@ -103,8 +103,8 @@ public class OcrParser {
         final List<String> result = IntStream.range(0, nbSymbols)
                 .map(i -> i * 3)
                 .mapToObj(i -> IntStream.range(0, 3)
-                        .map(j -> j + nbSymbols * 3 * j + i)
-                        .mapToObj(j -> input.substring(j, j + 3))
+                        .map(row -> row + nbSymbols * 3 * row + i)
+                        .mapToObj(beginIndex -> input.substring(beginIndex, beginIndex + 3))
                         .collect(Collectors.joining())
                 )
                 .collect(Collectors.toList());
