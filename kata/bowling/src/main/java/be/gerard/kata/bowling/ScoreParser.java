@@ -66,7 +66,7 @@ public final class ScoreParser {
         } else if ('-' == delivery) {
             return 0;
         } else if ('F' == delivery) {
-            return -1;
+            return 0;
         } else {
             return Character.getNumericValue(delivery);
         }

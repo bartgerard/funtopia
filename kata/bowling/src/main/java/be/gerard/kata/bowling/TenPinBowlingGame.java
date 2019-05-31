@@ -40,7 +40,7 @@ public class TenPinBowlingGame {
                 .map(Frame::getDeliveries)
                 .flatMapToInt(IntStream::of)
                 .limit(toNbCountableDeliveries(frame))
-                .filter(delivery -> delivery > 0) // DO NOT COUNT FOULS
+                //.filter(delivery -> delivery > 0) // DO NOT COUNT FOULS
                 .sum();
     }
 
