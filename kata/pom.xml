@@ -18,6 +18,7 @@
         <module>bowling</module>
         <module>varia</module>
         <module>bank-ocr</module>
+        <module>gilded-rose</module>
     </modules>
 
 </project>
